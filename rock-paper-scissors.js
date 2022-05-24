@@ -1,4 +1,5 @@
 console.log("Welcome to my Rock - Paper - Scissors game!");
+console.log("This game will be 5 rounds, good luck!!");
 let you = 0;
 let computerCount = 0;
 let playerInput; // will store the player choice in this variable
