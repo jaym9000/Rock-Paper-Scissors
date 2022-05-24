@@ -6,3 +6,12 @@ function computerPlay() {
 }
 
 // console.log(computerPlay());
+
+function singleRound(playerSelection, computerSelection) {
+  let hand = playerSelection.charAt(0).toUpperCase();
+  hand += playerSelection.substring(1).toLowerCase();
+
+  return hand;
+}
+
+console.log(singleRound("rOCK"));
