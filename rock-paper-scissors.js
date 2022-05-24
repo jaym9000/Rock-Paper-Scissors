@@ -1,5 +1,7 @@
-console.log("Hello World");
+console.log("Welcome to my Rock - Paper - Scissors game!");
 let count = 0;
+let playerInput; // will store the player choice in this variable
+let cpu = computerPlay(); //this is the computer's choice
 
 function computerPlay() {
   //computer plays random between rock paper and scissors
@@ -7,37 +9,30 @@ function computerPlay() {
   return hand[Math.floor(Math.random() * hand.length)];
 }
 
-// console.log(computerPlay());
-
 function playRound(playerSelection, computerSelection) {
   //playerSelection case-insensitive
   let hand = playerSelection.charAt(0).toUpperCase();
   hand += playerSelection.substring(1).toLowerCase();
 
-  //   return hand;
-  //   console.log(
-  //     "You choose: " + hand + " | The computer choose: " + computerSelection
-  //   );
-
   if (hand === "Rock" && computerSelection === "Paper") {
-    count--;
+    count -= 1;
     return "You Lose! Paper beats Rock";
   } else if (hand === "Rock" && computerSelection === "Scissors") {
-    count++;
+    count += 1;
     return "You Win! Rock beats Scissors";
     // 2 statements above have player select Rock
   } else if (hand === "Paper" && computerSelection === "Rock") {
-    count++;
+    count += 1;
     return "You Win! Paper beats Rock";
   } else if (hand === "Paper" && computerSelection === "Scissors") {
-    count--;
+    count -= 1;
     return "You Lose! Scissors beat paper";
     // 2 statements above have player select Paper
   } else if (hand === "Scissors" && computerSelection === "Rock") {
-    count--;
+    count -= 1;
     return "You Lose! Rock beats Scissors";
   } else if (hand === "Scissors" && computerSelection === "Paper") {
-    count++;
+    count += 1;
     return "You Win! Scissors beat paper";
     // 2 statements above have player select Scissors
   } else {
@@ -45,23 +40,18 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// console.log(playRound("rOCK", computerPlay()));
 
-// hand === "Paper" && computerSelection === "Rock"
-let playerInput;
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    //   game to 5
-    playerInput = prompt(
-      "Please make your choice between: Rock - Paper - Scissors "
-    );
-    playRound(playerInput, computerPlay());
-    console.log(
-      "You choose: " + playerInput + " | The computer choose: " + computerPlay()
-    );
+    // game of 5 rounds
+    playerInput = prompt("Please make your choice between: Rock - Paper - Scissors ");
+    console.log("The Computer choose: " + cpu);
+    console.log(playRound(playerInput, cpu));
+    // console.log("You choose: " + playerInput + " | The computer choose: " + cpu);
+    // console.log("The count is now: " + count);
   }
-
+// lines below to keep count and announce the winner
   if (count > 0) {
     console.log("You have won the game!!");
   } else if (count == 0) {
@@ -71,4 +61,5 @@ function game() {
   }
 }
 
+//line below runs the game
 game();
