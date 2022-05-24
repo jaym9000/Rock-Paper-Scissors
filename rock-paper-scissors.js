@@ -2,7 +2,7 @@ console.log("Welcome to my Rock - Paper - Scissors game!");
 let you = 0;
 let computerCount = 0;
 let playerInput; // will store the player choice in this variable
-let cpu = computerPlay(); //this is the computer's choice
+let cpu; //this is the computer's choice
 
 function computerPlay() {
   //computer plays random between rock paper and scissors
@@ -46,6 +46,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   for (let i = 0; i < 5; i++) {
     // game of 5 rounds
+    cpu = computerPlay();
     playerInput = prompt("Please make your choice between: Rock - Paper - Scissors ");
     console.log("The Computer choose: " + cpu);
     console.log(playRound(playerInput, cpu));
