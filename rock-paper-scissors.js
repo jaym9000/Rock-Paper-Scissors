@@ -17,27 +17,27 @@ function playRound(playerSelection, computerSelection) {
 
   if (hand === "Rock" && computerSelection === "Paper") {
     computerCount += 1;
-    return "You Lose! Paper beats Rock";
+    return "You Lose this round! Paper beats Rock";
   } else if (hand === "Rock" && computerSelection === "Scissors") {
     you += 1;
-    return "You Win! Rock beats Scissors";
+    return "You Win this round! Rock beats Scissors";
     // 2 statements above have player select Rock
   } else if (hand === "Paper" && computerSelection === "Rock") {
     you += 1;
-    return "You Win! Paper beats Rock";
+    return "You Win this round! Paper beats Rock";
   } else if (hand === "Paper" && computerSelection === "Scissors") {
     computerCount += 1;
-    return "You Lose! Scissors beat paper";
+    return "You Lose this round! Scissors beat paper";
     // 2 statements above have player select Paper
   } else if (hand === "Scissors" && computerSelection === "Rock") {
     computerCount += 1;
-    return "You Lose! Rock beats Scissors";
+    return "You Lose this round! Rock beats Scissors";
   } else if (hand === "Scissors" && computerSelection === "Paper") {
     you += 1;
-    return "You Win! Scissors beat paper";
+    return "You Win this round! Scissors beat paper";
     // 2 statements above have player select Scissors
   } else {
-    return "You've got a tie";
+    return "You tied this round.";
   }
 }
 
