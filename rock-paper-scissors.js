@@ -1,5 +1,6 @@
 console.log("Welcome to my Rock - Paper - Scissors game!");
-let count = 0;
+let you = 0;
+let computerCount = 0;
 let playerInput; // will store the player choice in this variable
 let cpu = computerPlay(); //this is the computer's choice
 
@@ -15,24 +16,24 @@ function playRound(playerSelection, computerSelection) {
   hand += playerSelection.substring(1).toLowerCase();
 
   if (hand === "Rock" && computerSelection === "Paper") {
-    count -= 1;
+    computerCount += 1;
     return "You Lose! Paper beats Rock";
   } else if (hand === "Rock" && computerSelection === "Scissors") {
-    count += 1;
+    you += 1;
     return "You Win! Rock beats Scissors";
     // 2 statements above have player select Rock
   } else if (hand === "Paper" && computerSelection === "Rock") {
-    count += 1;
+    you += 1;
     return "You Win! Paper beats Rock";
   } else if (hand === "Paper" && computerSelection === "Scissors") {
-    count -= 1;
+    computerCount += 1;
     return "You Lose! Scissors beat paper";
     // 2 statements above have player select Paper
   } else if (hand === "Scissors" && computerSelection === "Rock") {
-    count -= 1;
+    computerCount += 1;
     return "You Lose! Rock beats Scissors";
   } else if (hand === "Scissors" && computerSelection === "Paper") {
-    count += 1;
+    you += 1;
     return "You Win! Scissors beat paper";
     // 2 statements above have player select Scissors
   } else {
@@ -48,13 +49,14 @@ function game() {
     playerInput = prompt("Please make your choice between: Rock - Paper - Scissors ");
     console.log("The Computer choose: " + cpu);
     console.log(playRound(playerInput, cpu));
+    console.log("Your score: " + you + " | Computer score: " + computerCount);
     // console.log("You choose: " + playerInput + " | The computer choose: " + cpu);
     // console.log("The count is now: " + count);
   }
 // lines below to keep count and announce the winner
-  if (count > 0) {
+  if (you > computerCount) {
     console.log("You have won the game!!");
-  } else if (count == 0) {
+  } else if (you === computerCount) {
     console.log("You have tied the computer.");
   } else {
     console.log("You lost... get back UP and try again!");
