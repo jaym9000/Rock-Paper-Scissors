@@ -45,16 +45,17 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-  for (let i = 0; i < 5; i++) {
+  // for (let i = 0; i < 5; i++) {
     // game of 5 rounds
-    cpu = computerPlay();
     playerInput = prompt("Please make your choice between: Rock - Paper - Scissors ");
+    cpu = computerPlay();
+    
     console.log("The Computer choose: " + cpu);
     console.log(playRound(playerInput, cpu));
     console.log("Your score: " + you + " | Computer score: " + computerCount);
     // console.log("You choose: " + playerInput + " | The computer choose: " + cpu);
     // console.log("The count is now: " + count);
-  }
+  // }
 // lines below to keep count and announce the winner
   if (you > computerCount) {
     console.log("You have won the game!!");
