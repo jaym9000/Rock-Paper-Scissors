@@ -7,9 +7,19 @@ let you = 0;
 let computerCount = 0;
 let cpu; //this is the computer's choice
 
-//display beginning score of 0 - 0
+//adding event handlers to 3 buttons
+const rockBtn = document.querySelector(".Rock");
+const paperBtn = document.querySelector(".Paper");
+const scissorsBtn = document.querySelector(".Scissors");
+
+//DOM methods
+const score = document.createElement('div');
+
+//display beginning score
 const results = document.querySelector('#results');
 const resultText = document.createElement('div');
+
+//display 0 - 0
 resultText.classList.add('resultText');
 resultText.textContent = "Score: You = " + you + " | CPU = " + computerCount;
 results.appendChild(resultText);
@@ -27,15 +37,9 @@ function playRound(playerSelection, computerSelection) {
   console.log(hand + " vs " + computerSelection);
 }
 
-//adding event handlers to 3 buttons
-const rockBtn = document.querySelector(".Rock");
-const paperBtn = document.querySelector(".Paper");
-const scissorsBtn = document.querySelector(".Scissors");
-
-//DOM methods
-const score = document.createElement('div');
+//adding result and score to the DOM
 resultText.classList.add('resultText');
-  score.classList.add('score');
+score.classList.add('score');
 
 //Rock button
 rockBtn.addEventListener("click", function(){  
@@ -57,6 +61,8 @@ rockBtn.addEventListener("click", function(){
   }
   results.appendChild(resultText);
   results.appendChild(score);
+
+  winner();
 });
 
 //paper button
@@ -77,6 +83,11 @@ paperBtn.addEventListener("click", function(){
     resultText.textContent = "You tied this round.";
     score.textContent = "Score: You = " + you + " | CPU = " + computerCount;
   }
+
+  results.appendChild(resultText);
+  results.appendChild(score);
+
+  winner();
 });
 
 //scissors button
@@ -97,4 +108,35 @@ scissorsBtn.addEventListener("click", function(){
     resultText.textContent = "You tied this round.";
     score.textContent = "Score: You = " + you + " | CPU = " + computerCount;
   }
+
+  results.appendChild(resultText);
+  results.appendChild(score);
+
+  winner();
 });
+
+//announces winner and erases text to restart game
+function winner(){
+  if(computerCount === 5){
+    //set time out so the score updates before the alert pops up
+    setTimeout(function() {
+      alert('Unfortunately, you lost to the CPU with a score of: You = ' + you + ' | CPU = ' + computerCount + '. Don\'t give up and try again!');
+    },10)
+
+    //reset game
+    location.reload();
+
+    return;
+  }else if(you === 5){
+    //set time out so the score updates before the alert pops up
+    setTimeout(function() {
+      alert('You won with a score of: You = ' + you + ' | CPU = ' + computerCount + '. Try again to see if you were not just lucky.');
+    },10)
+    
+    //reset game
+    location.reload();
+
+    return;
+  }
+  
+}
