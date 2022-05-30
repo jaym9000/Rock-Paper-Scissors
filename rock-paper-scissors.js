@@ -16,7 +16,7 @@ const scissorsBtn = document.querySelector(".Scissors");
 const score = document.createElement('div');
 
 //display beginning score
-const results = document.querySelector('#results');
+const results = document.querySelector('#results2');
 const resultText = document.createElement('div');
 
 //display 0 - 0

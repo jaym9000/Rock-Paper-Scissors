@@ -1,8 +1,6 @@
-/* html{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+html{
+    background-color: beige;
+}
 
 .header{
     display: flex;
@@ -17,7 +15,6 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 /* Rock button */
@@ -57,5 +54,7 @@ img{
 .result{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
 }
