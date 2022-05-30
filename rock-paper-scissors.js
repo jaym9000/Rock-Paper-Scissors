@@ -1,7 +1,3 @@
-console.log("Hello");
-
-console.log("Welcome to my Rock - Paper - Scissors game!");
-
 //initializations and declarations
 let you = 0;
 let computerCount = 0;
