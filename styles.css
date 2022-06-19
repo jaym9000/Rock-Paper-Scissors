@@ -67,15 +67,3 @@ img {
   /* font-size: 3vw; */
   font-size: 170%;
 }
-
-/* @media (max-width: 1rem) {
-  #options {
-    flex-direction: column;
-  }
-} */
-/* @media all and (max-width: 30em) {
-  a.button4 {
-    display: block;
-    margin: 0.2em auto;
-  }
-} */
