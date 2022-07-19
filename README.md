@@ -1,4 +1,6 @@
 # Rock-Paper-Scissors
+https://jaym9000.github.io/Rock-Paper-Scissors/
+
 I will create a rock paper scissors game using Javascript from scratch.
 
 The rules for the ones who are not familiar with Rock Paper Scissors: 
